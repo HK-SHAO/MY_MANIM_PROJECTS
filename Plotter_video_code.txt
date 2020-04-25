@@ -1,0 +1,101 @@
+﻿复数幂迭代
+fps /*帧率*/= 30;
+color /*颜色*/= ["yellow","cyan"];
+p_b /*点精度*/= 200;
+ps /*点大小*/= 1;
+p_n /*线精度*/= 0.3;
+ls /*线粗细*/= 1;
+def /*定义*/= {love: 520, you: 1314/520};
+
+>f(z,n)=n<1?z:z^f(z,n-1)
+>c=complex(mp[1],mp[2])
+Circle(k,mp,0.05)
+Write(mp,[-0.99,0.95],"white")
+f(c,300k)
+
+贝塞尔曲线
+fps /*帧率*/= 60;
+color /*颜色*/= ["blue"];
+p_b /*点精度*/= 200;
+ps /*点大小*/= 1;
+p_n /*线精度*/= 0.4;
+ls /*线粗细*/= 1;
+def /*定义*/= {love: 520, you: 1314/520};
+
+>p0=[-0.5,0.5]
+>p1=[0.5,0.5]
+>p2=[cos(time/1000),sin(time/1000)]
+Write(p0,p0+0.03,"yellow")
+Write(p1,p1+0.03,"yellow")
+Write(p2,p2+0.03,"yellow")
+Circle(k,p0,0.03)
+Circle(k,p1,0.03)
+Circle(k,p2,0.03)
+B2(k,p0,p1,p2)
+
+爱心
+color /*颜色*/= ["pink"];
+
+(x^2+y^2-1)^3<x^2y^3
+像素爱心 (x^2+y^2-1)^3<x^2y^3?[1,0,0]+random([3]):[]
+
+黎曼积分
+fps /*帧率*/= 60;
+color /*颜色*/= ["white","yellow"];
+p_b /*点精度*/= 200;
+ps /*点大小*/= 1;
+p_n /*线精度*/= 1;
+ls /*线粗细*/= 1;
+def /*定义*/= {love: 520, you: 1314/520};
+
+>n=frame
+Integ(0,abs(x),f(x)=cos(10x),n)
+Write(n,[-0.05,0.9],"white",2)
+sin(10abs(x))/10
+
+切线
+fps /*帧率*/= 60;
+color /*颜色*/= ["blue","yellow","white"];
+p_b /*点精度*/= 200;
+ps /*点大小*/= 1;
+p_n /*线精度*/= 0.5;
+ls /*线粗细*/= 1;
+def /*定义*/= {love: 520, you: 1314/520};
+
+>f(x)=x^2
+>t=sin(time/1000)
+Circle(k,[t,-1],0.1)
+Write(t,[t,-1],"white")
+y=f(x)
+y=Diff(f,t)*(x-t)+f(t)
+
+>f(x)=sin(10x)/4
+>t=sin(time/1000)
+Circle(k,[t,-1],0.1)
+Write(t,[t,-1],"white")
+y=f(x)
+y=Diff(f,t)*(x-t)+f(t)
+
+分岔图
+color /*颜色*/= ["white"];
+
+m=sin((x-1.7)*(y+0.4))+sin(time/1000)
+Write([ceil(100*m)/100,ceil(100*sin(time/1000))/100],[0,0],"yellow")
+
+摆线
+fps /*帧率*/= 60;
+p_b /*点精度*/= 200;
+ps /*点大小*/= 1;
+color /*颜色*/= ["red","yellow","cyan"];
+p_n /*线精度*/= 0.2;
+ls /*线粗细*/= 1;
+def /*定义*/= {love: 520, you: 1314/520};
+
+>t=(1+sin(time/1000))π
+[t*k-sin(t*k),1-cos(t*k)]-[π,0]
+Circle(k,[t,1],1)-[π,0]
+Line(k,[t,1],[t-sin(t),1-cos(t)])-[π,0]
+Write(ceil(10t/pi)/10,[t-pi,-0.5],"white",9)
+Write("π",[t-pi+0.5,-0.5],"white",10)
+Write(ceil(10(1-cos(t))/(2pi)),[t-pi+1.2,1-cos(t)],"white",9)
+Write("π",[t-pi+1.4,1-cos(t)],"white",10)
